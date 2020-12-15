@@ -19,7 +19,7 @@
 // }
 
 export default {
-  back: '#333',
+  black: '#333',
   white: '#FFF',
   brand: '#EA2740',
   darkgrey: '#717171',
