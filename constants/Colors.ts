@@ -4,6 +4,7 @@ export default {
   brand: '#EA2740',
   darkgrey: '#717171',
   lightgrey: '#E5E5E5',
-  tabIconDefault: '#BFC5D2',
+  // tabIconDefault: '#BFC5D2',
+  tabIconDefault: '#333',
   tabIconSelected: '#EA2740',
 }

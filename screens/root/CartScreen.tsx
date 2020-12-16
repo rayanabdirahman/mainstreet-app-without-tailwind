@@ -1,13 +1,16 @@
-import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import * as React from 'react'
+import { StyleSheet } from 'react-native'
 import { View, Text } from 'react-native'
+import { Layout } from '../../components'
 
 export function CartScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Cart</Text>
-    </View>
-  );
+    <Layout>
+      <View style={styles.container}>
+        <Text style={styles.title}>Cart</Text>
+      </View>      
+    </Layout>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -25,4 +28,4 @@ const styles = StyleSheet.create({
     height: 1,
     width: '80%',
   },
-});
+})
