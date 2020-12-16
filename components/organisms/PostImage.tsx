@@ -11,7 +11,7 @@ export function PostImage(props: Props) {
       style={{ marginBottom: 8 }}
       onPress={() => alert('add double tap for like')}>
       <DefaultImage 
-        style={{ aspectRatio: 3/1.5, borderRadius: 8 }}
+        style={{ aspectRatio: 3/1.6, borderRadius: 8 }}
        {...props} />
     </TouchableOpacity>
   )
