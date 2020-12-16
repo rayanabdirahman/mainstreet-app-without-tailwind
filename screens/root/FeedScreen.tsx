@@ -1,14 +1,16 @@
 import * as React from 'react'
 import { StyleSheet } from 'react-native'
 import { View, Text } from 'react-native'
-import { Layout } from '../../components'
+import { Layout, Post} from '../../components'
 
 export function FeedScreen() {
   return (
     <Layout>
-      <View style={styles.container}>
-        <Text style={styles.title}>FEED</Text>
-      </View>
+      <Post
+        name="Footlocker"
+        username="footlocker"
+        status="Uploaded a new item"
+        source={{ uri: 'https://via.placeholder.com/150/F8BAC7/FFFFFF/' }} />
     </Layout>
   )
 }
