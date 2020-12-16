@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import { StatusBar } from 'expo-status-bar'
 import { theme } from './components/Theme'
 import useCachedResources from './hooks/useCachedResources'
 import AppLoading from 'expo-app-loading'
@@ -15,6 +16,7 @@ export default function App() {
     return (
       <ThemeProvider theme={theme}>
         <Navigation />
+        <StatusBar style="dark"/>
       </ThemeProvider>
     );
   }
