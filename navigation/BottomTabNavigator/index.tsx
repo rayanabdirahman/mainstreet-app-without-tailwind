@@ -1,22 +1,13 @@
 import { Feather, AntDesign,  } from '@expo/vector-icons'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { createStackNavigator } from '@react-navigation/stack'
 import * as React from 'react'
-import { View, Text } from 'react-native'
-
 import Colors from '../../constants/Colors'
-import { BottomTabRouteName } from '../screenNames'
+import { BottomTabRouteName } from '../routeNames'
 import { BottomTabParamList } from '../type'
-
-// placeholder modal screen
-// TODO: Find a better solution to open modal screens from bottom tab navigator
-function PlaceHolderModalScreen({ navigation }: any) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: "white" }}>
-      <Text>This is a placeholder modal!</Text>
-    </View>
-  );
-}
+import CartTabNavigator from './CartTabNavigator'
+import FeedTabNavigator from './FeedTabNavigator'
+import NotificationTabNavigator from './NotificationTabNavigator'
+import ProfileTabNavigator from './ProfileTabNavigator'
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>()
 
@@ -31,28 +22,28 @@ export default function BottomTabNavigator() {
       }}>
       <BottomTab.Screen
         name={BottomTabRouteName.FEED}
-        component={PlaceHolderModalScreen}
+        component={FeedTabNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="earth" color={color} />,
         }}
       />
       <BottomTab.Screen
         name={BottomTabRouteName.NOTIFICATION}
-        component={PlaceHolderModalScreen}
+        component={NotificationTabNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="hearto" color={color} />,
         }}
       />
       <BottomTab.Screen
         name={BottomTabRouteName.CART}
-        component={PlaceHolderModalScreen}
+        component={CartTabNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon type="Feather" name="shopping-bag" color={color} />,
         }}
       />
       <BottomTab.Screen
         name={BottomTabRouteName.PROFILE}
-        component={PlaceHolderModalScreen}
+        component={ProfileTabNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="user" color={color} />,
         }}
