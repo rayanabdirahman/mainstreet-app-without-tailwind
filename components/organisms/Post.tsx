@@ -17,7 +17,7 @@ type Props =  PostHeaderProps & DefaultImage['props'] & {
 
 const Container = styled.View<DefaultView['props']>`
   flex-direction: column;
-  /* align-items: center; */
+  margin-bottom: 24px;
 `
 
 export function Post(props: Props) {
