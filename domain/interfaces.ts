@@ -6,6 +6,8 @@ export interface UserModel {
   email: string
   avatar: string
   likes: string[]
+  createdAt: string
+  updatedAt: string
 }
 
 export interface PostModel {
@@ -14,4 +16,5 @@ export interface PostModel {
   postedBy: UserModel
   likes: string[]
   createdAt: string
+  updatedAt: string
 }

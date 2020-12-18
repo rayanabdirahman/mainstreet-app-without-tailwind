@@ -14,7 +14,7 @@ export default function timeStamp(current: any, previous: any) {
   }
 
   else if (elapsed < msPerHour) {
-    return Math.round(elapsed/msPerMinute) + ' mins ago';   
+    return Math.round(elapsed/msPerMinute) + 'mins ago';   
   }
 
   else if (elapsed < msPerDay ) {

@@ -16,11 +16,11 @@ export function Post({ post }: { post: PostModel }) {
   return (
     <Container>
       {/* TODO: store user fullname under name */}
-      <PostHeader 
+      <PostHeader
+        {...post.postedBy}
         name={`${post.postedBy.firstName} ${post.postedBy.lastName}`}
         status="Uploaded a new item"
-        createdAt={post.createdAt} 
-        {...post.postedBy} />
+        createdAt={post.createdAt} />
       <PostImage source={{ uri: 'https://via.placeholder.com/150/C4C4C4/C4C4C4/' }} />
       <PostInteractions />
       <PostCaption username={post.postedBy.username} caption={post.content} />
