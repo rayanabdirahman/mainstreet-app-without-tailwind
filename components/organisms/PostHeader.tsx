@@ -1,24 +1,28 @@
 import React from 'react'
 import { Thumbnail as DefaultThumbnail } from 'native-base'
-import { View as DefaultView } from 'react-native'
+import { View as DefaultView, TouchableOpacity as DefaultTouchableOpacity } from 'react-native'
 import styled from 'styled-components/native'
+import { useNavigation } from '@react-navigation/native'
 import { Text } from '../atoms/Text'
+import { BottomTabRouteName } from '../../navigation/routeNames'
 
 export type Props = {
+  _id: string
   avatar: string
   name: string
   username: string
   status: string
 }
 
-const Container = styled.View<DefaultView['props']>`
+const Container = styled.TouchableOpacity<DefaultTouchableOpacity['props']>`
   flex-direction: row;
   margin-bottom: 12px;
 `
 
 export function PostHeader({ avatar, name, username, status}: Props) {
+  const navigation = useNavigation()
   return (
-    <Container>
+    <Container onPress={() => navigation.navigate(BottomTabRouteName.PROFILE)}>
       <DefaultThumbnail 
         style={{  marginRight: 8, width: 48, height: 48 }}
         source={{ uri: avatar }} />
