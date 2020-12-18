@@ -12,6 +12,7 @@ export type BottomTabParamList = {
 
 export type FeedTabParamList = {
   FeedScreen: undefined
+  ProfileScreen: { userId: string }
 }
 
 export type NotificationTabParamList = {

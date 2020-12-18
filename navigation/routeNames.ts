@@ -7,7 +7,8 @@ export enum BottomTabRouteName {
 }
 
 export enum FeedTabRouteName {
-  FEED_SCREEN = 'FeedScreen'
+  FEED_SCREEN = 'FeedScreen',
+  PROFILE_SCREEN = 'ProfileScreen'
 }
 
 export enum NotificationTabRouteName {

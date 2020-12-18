@@ -1,6 +1,6 @@
 import React from 'react'
 import { AntDesign, Feather } from '@expo/vector-icons'
-import { View as DefaultView } from 'react-native'
+import { View as DefaultView, TouchableOpacity as DefaultTouchableOpacity } from 'react-native'
 import styled from 'styled-components/native'
 import { Text } from '../atoms/Text'
 import Colors from '../../constants/Colors'
@@ -17,7 +17,9 @@ export function PostInteractions(props: Props) {
   return (
     <Container>
       <DefaultView style={{ flexDirection: 'row', marginBottom: 8 }}>
-        <DefaultView style={{ flexDirection: 'row', alignItems: 'center', marginRight: 16 }}>
+        <DefaultTouchableOpacity
+          onPress={() => alert('liked')}
+          style={{ flexDirection: 'row', alignItems: 'center', marginRight: 16 }}>
           <AntDesign
             name="hearto"
             color={Colors.black}
@@ -25,7 +27,7 @@ export function PostInteractions(props: Props) {
             style={{ marginRight: 8 }}
           />
           <Text bold  style={{ fontSize: 14, marginBottom: 0  }}>2K</Text>
-        </DefaultView>
+        </DefaultTouchableOpacity>
         <DefaultView style={{ flexDirection: 'row', alignItems: 'center' }}>
           <Feather
             name="message-square"

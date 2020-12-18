@@ -4,7 +4,7 @@ import { View as DefaultView, TouchableOpacity as DefaultTouchableOpacity } from
 import styled from 'styled-components/native'
 import { useNavigation } from '@react-navigation/native'
 import { Text } from '../atoms/Text'
-import { BottomTabRouteName } from '../../navigation/routeNames'
+import { FeedTabRouteName } from '../../navigation/routeNames'
 import timeStamp from '../../utilities/timeStamp'
 
 export type Props = {
@@ -21,10 +21,10 @@ const Container = styled.TouchableOpacity<DefaultTouchableOpacity['props']>`
   margin-bottom: 12px;
 `
 
-export function PostHeader({ avatar, name, username, status, createdAt}: Props) {
+export function PostHeader({ _id, avatar, name, username, status, createdAt}: Props) {
   const navigation = useNavigation()
   return (
-    <Container onPress={() => navigation.navigate(BottomTabRouteName.PROFILE)}>
+    <Container onPress={() => navigation.navigate(FeedTabRouteName.PROFILE_SCREEN, { userId: _id })}>
       <DefaultThumbnail 
         style={{  marginRight: 8, width: 48, height: 48 }}
         source={{ uri: avatar }} />
