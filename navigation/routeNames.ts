@@ -1,3 +1,8 @@
+export enum RootRouteName {
+  ROOT = 'Root',
+  COMMENTS = 'Comments',
+}
+
 export enum BottomTabRouteName {
   FEED = 'Feed',
   NOTIFICATION = 'Notification',

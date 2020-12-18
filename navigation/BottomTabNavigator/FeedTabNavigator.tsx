@@ -12,7 +12,7 @@ export default function FeedTabNavigator() {
     <FeedTabStack.Navigator screenOptions={{ 
       headerBackTitle: ' ',
       headerTintColor: Colors.black,
-      headerStyle: { shadowColor: Colors.white },
+      // headerStyle: { shadowColor: Colors.white },
       headerTitleStyle: { color: Colors.black }
     }}>
       <FeedTabStack.Screen

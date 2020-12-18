@@ -4,6 +4,8 @@ import styled from 'styled-components/native'
 import { TouchableOpacity as DefaultTouchableOpacity } from 'react-native'
 import { Text } from './Text'
 import Colors from '../../constants/Colors'
+import { useNavigation } from '@react-navigation/native'
+import { RootRouteName } from '../../navigation/routeNames'
 
 type Props = {
   numberOfComments: number | undefined
@@ -15,9 +17,10 @@ const IconContainer = styled.TouchableOpacity<DefaultTouchableOpacity['props']>`
 `
 
 export function CommentButton({ numberOfComments }: Props) {
+  const navigation = useNavigation()
   return (
     <IconContainer
-      onPress={() => alert('comments')}
+      onPress={() => navigation.navigate(RootRouteName.COMMENTS)}
     >
       <Feather
         name="message-square"
