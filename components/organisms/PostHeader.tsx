@@ -5,6 +5,7 @@ import styled from 'styled-components/native'
 import { useNavigation } from '@react-navigation/native'
 import { Text } from '../atoms/Text'
 import { BottomTabRouteName } from '../../navigation/routeNames'
+import timeStamp from '../../utilities/timeStamp'
 
 export type Props = {
   _id: string
@@ -12,6 +13,7 @@ export type Props = {
   name: string
   username: string
   status: string
+  createdAt: string
 }
 
 const Container = styled.TouchableOpacity<DefaultTouchableOpacity['props']>`
@@ -19,7 +21,7 @@ const Container = styled.TouchableOpacity<DefaultTouchableOpacity['props']>`
   margin-bottom: 12px;
 `
 
-export function PostHeader({ avatar, name, username, status}: Props) {
+export function PostHeader({ avatar, name, username, status, createdAt}: Props) {
   const navigation = useNavigation()
   return (
     <Container onPress={() => navigation.navigate(BottomTabRouteName.PROFILE)}>
@@ -39,7 +41,7 @@ export function PostHeader({ avatar, name, username, status}: Props) {
           </DefaultView>
           <Text light>{status}</Text>         
         </DefaultView>
-        <Text light>1 hour ago</Text>          
+        <Text light> {timeStamp(new Date(), new Date(createdAt))} </Text>          
       </DefaultView>      
     </Container>
   )

@@ -13,4 +13,5 @@ export interface PostModel {
   content: string
   postedBy: UserModel
   likes: string[]
+  createdAt: string
 }
