@@ -11,5 +11,4 @@ export const Text = styled.Text<TextProps>`
   font-size: 14px;
   font-family: ${({ theme, bold }) => (bold ? theme.font.bold : theme.font.regular)};
   color: ${({ theme, light }) => (light ? theme.color.darkgrey : theme.color.black)};
-  margin-bottom: 8px;
 `

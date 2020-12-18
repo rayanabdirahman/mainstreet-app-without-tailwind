@@ -1,33 +1,32 @@
 import * as React from 'react'
-import { StyleSheet } from 'react-native'
-import { View, Text } from 'react-native'
-import { Layout, Post} from '../../components'
+import { ActivityIndicator } from 'react-native'
+import { FlatList } from 'react-native'
+import { Layout, Post } from '../../components'
+import Colors from '../../constants/Colors'
+import { PostModel } from '../../domain/interfaces'
+import usePostsData from '../../hooks/usePostsData'
 
 export function FeedScreen() {
-  return (
-    <Layout>
-      <Post
-        name="Footlocker"
-        username="footlocker"
-        status="Uploaded a new item"
-        source={{ uri: 'https://via.placeholder.com/150/F8BAC7/FFFFFF/' }} />
-    </Layout>
-  )
+  const posts: PostModel[] = usePostsData()
+  if (!posts) {
+    return (
+      <Layout>
+        <ActivityIndicator 
+          size="large" color={Colors.brand} />        
+      </Layout>
+    ) 
+  } else {
+    return (
+      <Layout>
+        <FlatList
+          data={posts}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(post: PostModel) => post._id}
+          renderItem={({ item: post }: { item: PostModel }) => (
+            <Post post={post} />
+          )}
+         />
+      </Layout>
+    )
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-})

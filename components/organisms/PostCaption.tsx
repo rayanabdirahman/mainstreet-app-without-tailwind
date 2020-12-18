@@ -2,13 +2,8 @@ import React from 'react'
 import { View as DefaultView } from 'react-native'
 import styled from 'styled-components/native'
 import { Text } from '../atoms/Text'
-import Colors from '../../constants/Colors'
 
-
-export type Props = {
-  username?: string
-  comment?: string
-}
+export type Props = { username: string, caption: string }
 
 const Container = styled.View<DefaultView['props']>`
   flex-direction: row;
@@ -16,11 +11,11 @@ const Container = styled.View<DefaultView['props']>`
   margin-left: 8px;
 `
 
-export function PostComment(props: Props) {
+export function PostCaption({ username, caption }: Props) {
   return (
     <Container>
-      <Text bold style={{ marginBottom: 0, marginRight: 4 }}>Footlocker</Text>  
-      <Text style={{ marginBottom: 0 }}>New Nike Airmax 95</Text>
+      <Text bold style={{ marginBottom: 0, marginRight: 4 }}>{username}</Text>  
+      <Text style={{ marginBottom: 0 }}>{caption}</Text>
     </Container>
   )
 }
