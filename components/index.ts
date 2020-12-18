@@ -1,5 +1,10 @@
 export { Layout } from './Layout'
 
+// atoms
+export { Text } from './atoms/Text'
+export { LikeButton } from './atoms/LikeButton'
+export { CommentButton } from './atoms/CommentButton'
+
 // organisms
 export { Thumbnail } from './organisms/Thumbnail'
 export { Post } from './organisms/Post'

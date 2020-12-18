@@ -12,7 +12,7 @@ export default function usePostsData() {
         const posts  = await PostApi.findAll()
         setPosts(posts)
       } catch (e) {
-        console.log('POST ERROR: ', e)
+        console.log('usePostsData ERROR: ', e)
       }
     }
     loadPostsAsyncData()

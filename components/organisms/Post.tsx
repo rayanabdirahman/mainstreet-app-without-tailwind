@@ -13,17 +13,19 @@ const Container = styled.View<DefaultView['props']>`
 `
 
 export function Post({ post }: { post: PostModel }) {
+  const { postedBy: user } = post
   return (
     <Container>
       {/* TODO: store user fullname under name */}
       <PostHeader
-        {...post.postedBy}
-        name={`${post.postedBy.firstName} ${post.postedBy.lastName}`}
+        {...user}
+        name={`${user.firstName} ${user.lastName}`}
         status="Uploaded a new item"
         createdAt={post.createdAt} />
       <PostImage source={{ uri: 'https://via.placeholder.com/150/C4C4C4/C4C4C4/' }} />
-      <PostInteractions />
-      <PostCaption username={post.postedBy.username} caption={post.content} />
+      <PostInteractions postId={post._id} likes={post.likes} />
+      {/* TODO: rename post.content to caption */}
+      <PostCaption username={user.username} caption={post.content} />
     </Container>
   )
 }
