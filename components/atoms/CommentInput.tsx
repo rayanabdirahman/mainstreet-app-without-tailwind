@@ -1,17 +1,35 @@
 import React from 'react'
 import styled from 'styled-components/native'
-import { Text as DefaultText, TextInput as DefaultTextInput } from 'react-native'
+import { Thumbnail as DefaultThumbnail } from 'native-base'
+import { View as DefaultView, TextInput as DefaultTextInput } from 'react-native'
 
-type Props = DefaultTextInput['props'] & {
-  bold?: boolean
-  light?: boolean
+type Props = DefaultTextInput['props'] & DefaultView['props'] & {
+  avatar: string
 }
 
-export const CommentInput = styled.TextInput<Props>`
-  font-size: 14px;
-  font-family: ${({ theme, bold }) => (bold ? theme.font.bold : theme.font.regular)};
-  color: ${({ theme, light }) => (light ? theme.color.darkgrey : theme.color.black)};
+const Input = styled.TextInput<Props>`
   border-radius: 32px;
-  padding: 20px 0 20px 20px;
-  background-color: ${({ theme }) => theme.color.lightgrey};
+  padding: 16px 0 16px 20px;
+  border-color: ${({ theme }) => theme.color.lightgrey};
+  border-width: 1px;
+  flex: 1;
 `
+
+const Container = styled.View<Props>`
+  padding: 24px 16px;
+  border-color: ${({ theme }) => theme.color.lightgrey};
+  border-top-width: 1px;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+`
+
+export const CommentInput = (props: Props) => (
+  <Container {...props}>
+    <DefaultThumbnail
+      small
+      source={{ uri: props.avatar }}
+      style={{ marginRight: 16 }} />
+    <Input {...props} />
+  </Container>
+)

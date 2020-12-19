@@ -1,4 +1,4 @@
-export { Layout } from './Layout'
+export { Layout, LayoutWithOutContentContainer } from './Layout'
 
 // atoms
 export { Text } from './atoms/Text'

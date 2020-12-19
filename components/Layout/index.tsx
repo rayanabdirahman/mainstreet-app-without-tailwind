@@ -10,7 +10,6 @@ const LayoutContentContainer = styled.View<Props>`
   margin-left: 20px;
   margin-right: 20px;
   background-color: ${({ theme }) => theme.color.white };
-  height: 100%;
 `
 
 export function Layout(props: Props) {
@@ -19,6 +18,18 @@ export function Layout(props: Props) {
       <LayoutContentContainer {...props}>
         { props.children}
       </LayoutContentContainer>
+    </SafeAreaView>
+  )
+}
+
+export function LayoutWithOutContentContainer(props: Props) {
+  return (
+    <SafeAreaView style={{ 
+      backgroundColor: Colors.white,
+      flex: 1 }}>
+      <>
+      { props.children}
+      </>
     </SafeAreaView>
   )
 }
