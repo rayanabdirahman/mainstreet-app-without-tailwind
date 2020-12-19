@@ -1,9 +1,14 @@
+import { StackScreenProps } from '@react-navigation/stack'
 import * as React from 'react'
-import { View as DefaultView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard  } from 'react-native';
+import { View as DefaultView, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard, Text  } from 'react-native'
 import { CommentInput, LayoutWithOutContentContainer } from '../../components'
 import Colors from '../../constants/Colors'
+import { RootRouteName } from '../../navigation/routeNames'
+import { RootStackParamList } from '../../navigation/type'
 
-export function CommentScreen() {
+export function CommentScreen(
+  { navigation, route }: StackScreenProps<RootStackParamList, RootRouteName.COMMENTS>
+) {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS == "ios" ? "padding" : "height"}
@@ -12,7 +17,8 @@ export function CommentScreen() {
       >
       <LayoutWithOutContentContainer>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-          <DefaultView  style={{ flex: 1 }}> 
+          <DefaultView  style={{ flex: 1 }}>
+            <Text>{route.params.postId}</Text>
           </DefaultView>
         </TouchableWithoutFeedback>
         <CommentInput

@@ -22,7 +22,7 @@ export function PostInteractions({ postId, likes }: { postId: string, likes: str
           numberOfLikes={numberOfLikes}
           handleLikeToggle={() => likeOnePost(postId)}
         />
-        <CommentButton numberOfComments={265} />
+        <CommentButton postId={postId} numberOfComments={265} />
       </DefaultView>
       <Text light style={{ fontSize: 12, marginBottom: 0  }}>
         liked by janny, champaignpapi and 400 others

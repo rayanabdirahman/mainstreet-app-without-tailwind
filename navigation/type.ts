@@ -1,6 +1,6 @@
 export type RootStackParamList = {
   Root: undefined
-  Comments: undefined
+  Comments: { postId: string }
   NotFound: undefined
 }
 

@@ -9,6 +9,7 @@ import { RootRouteName } from '../../navigation/routeNames'
 
 type Props = {
   numberOfComments: number | undefined
+  postId: string
 }
 
 const IconContainer = styled.TouchableOpacity<DefaultTouchableOpacity['props']>`
@@ -16,11 +17,11 @@ const IconContainer = styled.TouchableOpacity<DefaultTouchableOpacity['props']>`
   align-items: center;
 `
 
-export function CommentButton({ numberOfComments }: Props) {
+export function CommentButton({ numberOfComments, postId }: Props) {
   const navigation = useNavigation()
   return (
     <IconContainer
-      onPress={() => navigation.navigate(RootRouteName.COMMENTS)}
+      onPress={() => navigation.navigate(RootRouteName.COMMENTS, { postId })}
     >
       <Feather
         name="message-square"
