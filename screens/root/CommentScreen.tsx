@@ -1,31 +1,14 @@
 import * as React from 'react'
-import { StyleSheet } from 'react-native'
-import { View, Text } from 'react-native'
-import { Layout } from '../../components'
+import { View as DefaultView, Text } from 'react-native'
+import { CommentInput, Layout } from '../../components'
+import Colors from '../../constants/Colors'
 
 export function CommentScreen() {
   return (
     <Layout>
-      <View style={styles.container}>
-        <Text style={styles.title}>Comment</Text>
-      </View>      
+      <DefaultView  style={{ flex: .9 }}>       
+      </DefaultView>
+      <CommentInput placeholder="Add comment" />            
     </Layout>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-})

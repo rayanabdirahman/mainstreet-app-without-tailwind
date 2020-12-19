@@ -4,6 +4,7 @@ export { Layout } from './Layout'
 export { Text } from './atoms/Text'
 export { LikeButton } from './atoms/LikeButton'
 export { CommentButton } from './atoms/CommentButton'
+export { CommentInput } from './atoms/CommentInput'
 
 // organisms
 export { Thumbnail } from './organisms/Thumbnail'
