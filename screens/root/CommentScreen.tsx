@@ -8,7 +8,7 @@ export function CommentScreen() {
     <KeyboardAvoidingView
       behavior={Platform.OS == "ios" ? "padding" : "height"}
       style={{ flex: 1 }}
-      keyboardVerticalOffset={85}
+      keyboardVerticalOffset={90}
       >
       <LayoutWithOutContentContainer>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
