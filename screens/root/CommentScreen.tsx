@@ -9,6 +9,9 @@ import { RootStackParamList } from '../../navigation/type'
 export function CommentScreen(
   { navigation, route }: StackScreenProps<RootStackParamList, RootRouteName.COMMENTS>
 ) {
+  const [comment, setComment] = React.useState<string>()
+  const { postId } = route.params
+
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS == "ios" ? "padding" : "height"}
@@ -18,10 +21,13 @@ export function CommentScreen(
       <LayoutWithOutContentContainer>
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <DefaultView  style={{ flex: 1 }}>
-            <Text>{route.params.postId}</Text>
+            <Text>{postId}</Text>
+            <Text>{comment}</Text>
           </DefaultView>
         </TouchableWithoutFeedback>
         <CommentInput
+          onChangeText={(value: string) => setComment(value)}
+          onSubmitEditing={() => console.log('EVENL ', { comment, postId })}
           avatar={"https://via.placeholder.com/150/C4C4C4/C4C4C4/"}
           placeholder="Add a comment..." />            
       </LayoutWithOutContentContainer>
