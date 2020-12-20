@@ -32,7 +32,7 @@ export function CommentButton({ numberOfComments, postId }: Props) {
       <Text bold style={{ 
         fontSize: 14, marginBottom: 0  
       }}>
-        {numberOfComments}
+        {numberOfComments || ""}
       </Text>
     </IconContainer>
   )

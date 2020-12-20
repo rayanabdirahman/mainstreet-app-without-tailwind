@@ -23,7 +23,7 @@ export function Post({ post }: { post: PostModel }) {
         status="Uploaded a new item"
         createdAt={post.createdAt} />
       <PostImage source={{ uri: 'https://via.placeholder.com/150/C4C4C4/C4C4C4/' }} />
-      <PostInteractions postId={post._id} likes={post.likes} />
+      <PostInteractions postId={post._id} likes={post.likes} comments={post.comments} />
       {/* TODO: rename post.content to caption */}
       <PostCaption username={user.username} caption={post.content} />
     </Container>
