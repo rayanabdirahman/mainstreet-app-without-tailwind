@@ -5,6 +5,7 @@ export { Text } from './atoms/Text'
 export { LikeButton } from './atoms/LikeButton'
 export { CommentButton } from './atoms/CommentButton'
 export { CommentInput } from './atoms/CommentInput'
+export { Spinner } from './atoms/Spinner'
 
 // organisms
 export { Thumbnail } from './organisms/Thumbnail'
