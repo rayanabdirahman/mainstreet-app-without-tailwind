@@ -1,4 +1,5 @@
 export { Layout, LayoutWithOutContentContainer } from './Layout'
+export { KeyboardAvoidingContainer } from './Layout/KeyboardAvoidingContainer'
 
 // atoms
 export { Text } from './atoms/Text'

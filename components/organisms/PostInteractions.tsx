@@ -15,7 +15,7 @@ const Container = styled.View<DefaultView['props']>`
 
 export function PostInteractions({ postId, likes, comments }: { postId: string, likes: string[], comments: string[] }) {
   const [likeOnePost, hasPostBeenLikedByUser, numberOfLikes] = usePostLikeData(likes)
-  const [numberOfComments] = usePostCommentData(likes)
+  const [numberOfComments] = usePostCommentData(comments)
   return (
     <Container>
       <DefaultView style={{ flexDirection: 'row', marginBottom: 8 }}>
