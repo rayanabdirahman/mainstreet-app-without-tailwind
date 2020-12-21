@@ -1,27 +1,27 @@
 import axios from 'axios'
 import Constants from 'expo-constants'
 import buildClient from '../utilities/axios-helper'
-import { AuthToeknModel, SignUpModel, SignInModel, UserModel } from '../domain/interfaces'
+import { AuthTokenModel, SignUpModel, SignInModel, UserModel } from '../domain/interfaces'
 
 const API_BASE_URL = `${Constants.manifest.extra.API_URL}/user`
 
-type Authentication = {
-  signUp(model: SignUpModel): Promise<AuthToeknModel>
-  signIn(model: SignInModel): Promise<AuthToeknModel>
+type AuthenticationApi = {
+  signUp(model: SignUpModel): Promise<AuthTokenModel>
+  signIn(model: SignInModel): Promise<AuthTokenModel>
   // signOut(): Promise<ApiSuccessResponse>
   authorise(token: string | null): Promise<UserModel>
 }
 
-const Authentication: Authentication = {
+const AuthenticationApi: AuthenticationApi = {
   /**
    * Register user
    * @param { SignUpModel } model - stores user signup details
    * @post /api/user/
    */
-  async signUp(model: SignUpModel): Promise<AuthToeknModel> {
+  async signUp(model: SignUpModel): Promise<AuthTokenModel> {
     try {
       const response  = await axios.post(`${API_BASE_URL}/signup`, model)
-      return response.data.data.token
+      return response.data.data
     } catch (error) {
       throw error.response ? error.response.data.error : error.request
     }
@@ -32,10 +32,10 @@ const Authentication: Authentication = {
    * @param { SignInModel } model - stores user sign in details
    * @post /api/user/signin
    */
-  async signIn(model: SignInModel): Promise<AuthToeknModel> {
+  async signIn(model: SignInModel): Promise<AuthTokenModel> {
     try {
       const response  = await axios.post(`${API_BASE_URL}/signin`, model)
-      return response.data.data.token
+      return response.data.data
     } catch (error) {
       throw error.response ? error.response.data.error : error.request
     }
@@ -69,4 +69,4 @@ const Authentication: Authentication = {
   }
 }
 
-export default Authentication
+export default AuthenticationApi

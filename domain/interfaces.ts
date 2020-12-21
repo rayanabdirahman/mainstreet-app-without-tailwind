@@ -1,5 +1,5 @@
-export interface AuthToeknModel {
-  toekn: string
+export interface AuthTokenModel {
+  token: string
 }
 
 export interface SignUpModel {

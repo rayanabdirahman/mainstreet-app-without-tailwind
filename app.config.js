@@ -19,6 +19,7 @@ export default {
     supportsTablet: true
   },
   extra: {
-    API_URL: process.env.__DEV__ ? 'http://a33422a24caf.ngrok.io/api' : 'http://a33422a24caf.ngrok.io/api'
+    API_URL: process.env.__DEV__ ? 'http://a33422a24caf.ngrok.io/api' : 'http://a33422a24caf.ngrok.io/api',
+    LOCALSTORAGE_AUTHORIZATION_TOKEN: 'Authorization-Token'
   },
 }
